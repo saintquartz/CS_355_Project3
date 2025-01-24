@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= username %>'s Profile</title>
+  <link rel="stylesheet" href="/stylesheets/profile.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    
+            <div class="container">
+            <header>
+                <div class= "logo">
+                    <img src="../public/images/Pencil.png" alt ="Quizz logo">
+                </div>
+              <!-- Comment for future use -->
+                <nav>
+                <ul>
+                    <li><a href="/" class="home-btn">Home</a></li>
+                    <li><a href="/quiz/reset" class="quizzes-btn">Quiz</a></li>
+                    <li><a href="/auth/logout" class="login-btn">Logout</a></li>
+                </ul>
+              </nav>
+            </header> 
+          <div class="profile-container">
+            <!-- Left Side: Account Info -->
+            <div class="account-info">
+              <h2>User Profile</h2>
+              <p><strong>Username:</strong> <%= username %></p>
+              <p><strong>Full Name:</strong> <%= name %></p>
+              <p><strong>Email:</strong> <%= email %></p>
+              <p><strong>Personal Best:</strong> <%= highscore %></p>
+            </div>
+        
+            <!-- Right Side: Quiz History -->
+            <div class="quiz-history">
+              <h2>Quiz History</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date & Time</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(let i=0; i < history.date.length; i++) { %>
+                    <tr>
+                      <td><%= history.date[i] %></td>
+                      <td><%= history.score[i] %> / 10 </td>
+                    </tr>
+                  <% }; %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>

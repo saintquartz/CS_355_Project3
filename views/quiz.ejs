@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" type="text/css" href="/stylesheets/quizStyle.css">
+    </head>
+    <body>
+        <div>
+            <h1 id="quiz-question"><%= num+1%>. <%= quiz.question %></h1>
+            <div class="quiz">
+                <form action="/quiz/next" method="POST">
+                    <div class="row">
+                        <input type="radio" id="QA" name="choice" value="A" required>
+                        <label for="QA" class="answer-container"><p><%= quiz.A %></p></label>
+                        <input type="radio" id="QB" name="choice" value="B">
+                        <label for="QB" class="answer-container"><p><%= quiz.B %></p></label>
+                    </div>
+                    <div class="row">
+                        <input type="radio" id="QC" name="choice" value="C">
+                        <label for="QC" class="answer-container"><p><%= quiz.C %></p></label>
+                        <input type="radio" id="QD" name="choice" value="D">
+                        <label for="QD" class="answer-container"><p><%= quiz.D %></p></label>
+                    </div>
+                    <div id="submit-container">
+                        <input id="submit-button" type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
